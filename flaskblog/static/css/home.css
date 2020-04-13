@@ -1,0 +1,7 @@
+body{
+  /* background-color: red; */
+  background-image: url('/static/img/Black_Background/Black Background.jpg');
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

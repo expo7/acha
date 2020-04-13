@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/home.css')}}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.css"
+    rel="stylesheet" type="text/css">
+<link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js"></script>
+<script>
+    var players_list = Array.from({
+        {
+            players_list | safe
+        }
+    });
+    var players_pattern = {
+        {
+            players_pattern | tojson
+        }
+    };
+</script>
+<script src="{{ url_for('static', filename='js/autocomp.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,57 @@
+h2{
+  color: black;
+  
+}
+
+.img {
+  border-radius: 30%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jumbotron {
+  background-image: url("/static/img/ice3.jpg");
+  margin-top: 10px;
+  background-position: center; /* Center the image */
+  background-color: black;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 100%;
+  /* Resize the background image to cover the entire container */
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-image: url("/static/img/Black_Background/Black Background.jpg");
+}
+
+h2 {
+  text-align: center;
+
+}
+.chart-container{
+  height: 400px;
+  width: 1000px;
+  background-color: aliceblue;
+}
+.col{
+  height: 400px;
+  background-color: white;
+  opacity: .8;
+  margin: 10px;
+}
+#myDiv11{
+  height: 400px;
+  background-color: white;
+  opacity: .8;
+}
+.season{
+
+  background-color:#CECECE;
+  opacity: .8;
+
+}
+
