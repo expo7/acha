@@ -6,11 +6,13 @@ df['img']='/static/img/backup.png'
 print(df.head())
 df.to_csv('flaskblog/data.csv',index=False)
 '''
+f = '../acha/flaskblog/data.csv'
+# /home/brendan/Desktop/acha/flaskblog/data.csv
 
 
 def get_player_attributes(playername):
 
-    df = pd.read_csv('flaskblog/data.csv')
+    df = pd.read_csv(f)
     df.drop('Unnamed: 0', axis=1, inplace=True)
     # print(len(df))
     df = df.drop(df[(df['GP'] == 0)].index)
@@ -22,7 +24,6 @@ def get_player_attributes(playername):
     df['PIMS/Game'] = df['PIMS'] / df['GP']
     df['PPG/Game'] = df['PPG'] / df['GP']
     df['SHG/Game'] = df['SHG'] / df['GP']
-    print('============')
     try:
         return df.loc[df['Name'] == playername].to_dict('r')[0]
     except:
@@ -33,7 +34,7 @@ print(get_player_attributes('Tyler Billngsly'))
 
 
 def get_team(playername):
-    df = pd.read_csv('/home/brendan/Desktop/webscrap/data/combined_csv2.csv')
+    df = pd.read_csv(f)
     df.drop('Unnamed: 0', axis=1, inplace=True)
     # print(len(df))
     df = df.drop(df[(df['GP'] == 0)].index)
@@ -61,7 +62,7 @@ def get_team(playername):
 
 
 def get_csv():
-    df = pd.read_csv('/home/brendan/Desktop/webscrap/data/combined_csv2.csv')
+    df = pd.read_csv(f)
     df = df.drop(df[(df['GP'] == 0)].index)
     df = df.drop(df[(df['PTS'] <= 1)].index)
     df['G/Game'] = df['G'] / df['GP']
@@ -77,7 +78,7 @@ def get_csv():
 
 
 def get_player_list():
-    df = pd.read_csv('flaskblog/data.csv')
+    df = pd.read_csv(f)
     df['Flag'] = 'https://cdn.sofifa.org/players/4/19/158023.png'
     print(df.head())
     df = df.fillna('no name')
@@ -87,7 +88,7 @@ def get_player_list():
 
 
 def get_player_pattern():
-    df = pd.read_csv('flaskblog/data.csv')
+    df = pd.read_csv(f)
     #df = df.drop(df[(df['GP'] == 0)].index)
     #df = df.drop(df[(df['PTS'] <= 1)].index)
     #df = df.fillna('no name')
@@ -102,6 +103,6 @@ def get_player_pattern():
 
 
 def set_img(img_file, name):
-    df = pd.read_csv('flaskblog/data.csv')
+    df = pd.read_csv(f)
     df['img'].loc[df.Name == name] = img_file
-    df.to_csv('flaskblog/data.csv', index=False)
+    df.to_csv(f, index=False)
