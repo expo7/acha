@@ -2,7 +2,7 @@ body{
 
   background-image: url('/static/img/Black Background.jpg');
   display: block;
-  color: white;
+  color: blue;
   background-size: cover;
   background-repeat: no-repeat;
 }
