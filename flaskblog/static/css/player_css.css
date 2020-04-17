@@ -1,6 +1,6 @@
 h2{
   color: black;
-  
+
 }
 
 .img {
@@ -25,7 +25,7 @@ h2{
 
 body {
   font-family: 'Times New Roman', Times, serif;
-  background-image: url("/static/img/Black_Background/Black Background.jpg");
+  background-image: url("/static/img/Black Background.jpg");
 }
 
 h2 {
@@ -54,4 +54,3 @@ h2 {
   opacity: .8;
 
 }
-
