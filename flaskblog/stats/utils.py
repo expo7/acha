@@ -1,11 +1,10 @@
 import pandas as pd
-from flask import  Blueprint
+from flask import Blueprint
 
 
 stats = Blueprint('main', __name__)
 
 f = '../acha/flaskblog/data.csv'
-
 
 
 def get_player_attributes(playername):
@@ -55,8 +54,8 @@ def get_team(playername):
     team_players = team_players.reset_index()
     # print(team)
     return team_players.to_json()
-#x=json.loads(get_team('Tyler Billingsly'))
-# print(x["Name"]['13'])
+
+
 def get_player_list():
     df = pd.read_csv(f)
     df['Flag'] = 'https://cdn.sofifa.org/players/4/19/158023.png'
@@ -69,9 +68,6 @@ def get_player_list():
 
 def get_player_pattern():
     df = pd.read_csv(f)
-    #df = df.drop(df[(df['GP'] == 0)].index)
-    #df = df.drop(df[(df['PTS'] <= 1)].index)
-    #df = df.fillna('no name')
     option = []
 
     for i in range(len(df.Name)):
@@ -80,6 +76,7 @@ def get_player_pattern():
 
     return listToStr
 # print(get_player_pattern())
+
 
 def get_csv():
     df = pd.read_csv(f)

@@ -112,12 +112,15 @@ def nav_search():
         if (get_player_attributes(request.form["player"]) == 0):
             flash('enter a valid name', 'danger')
             page = request.args.get('page', 1, type=int)
-            posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-            return render_template('home.html', posts=posts, players_pattern=players_pattern)
+            posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page,
+                                                                          per_page=5)
+            return render_template('home.html', posts=posts,
+                                   players_pattern=players_pattern)
         else:
             return redirect(url_for('stats.player', name=request.form["player"]))
     else:
         flash('enter a valid name', 'danger')
         page = request.args.get('page', 1, type=int)
-        posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
+        posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page,
+                                                                      per_page=5)
         return render_template('home.html', posts=posts, players_pattern=players_pattern)

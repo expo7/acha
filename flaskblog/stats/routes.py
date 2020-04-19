@@ -1,14 +1,9 @@
-from flaskblog.utils import get_player_attributes, get_team, get_csv, get_player_list, get_player_pattern, set_img
-from flask_login import login_user, current_user, logout_user, login_required
-from flaskblog.models import User, Post
-import os
-import secrets
-from PIL import Image
-from flask import render_template, url_for, flash, redirect, request, session,Blueprint
-from flaskblog.models import db
-from flaskblog.stats.forms import PlayerForm
+from flaskblog.stats.utils import (get_player_attributes, get_team, get_csv,
+                                   get_player_pattern)
+from flask import render_template, url_for, flash, redirect, request, Blueprint
 
 stats = Blueprint('stats', __name__)
+
 
 @stats.route('/<name>', methods=['GET', 'POST'])
 def player(name):
@@ -21,7 +16,6 @@ def player(name):
 
     attributes = get_team(playername=name)
     num = get_player_attributes(name)['#']
-    p = get_player_attributes(name)
     img_f = get_player_attributes(name)['img']
 
     g = get_player_attributes(name)['G']
@@ -37,4 +31,7 @@ def player(name):
     shg = get_player_attributes(name)['SHG']
 
     data = get_csv()
-    return render_template('player.html', ppg=ppg, shg=shg, pimspg=pimspg, apg=apg, ptspg=ptspg, gp=gp, gpg=gpg, g=g, a=a, pts=pts, pims=pims, attributes=attributes, num=num, name=name, data=data, players_pattern=players_pattern, img_f=img_f)
+    return render_template('player.html', ppg=ppg, shg=shg, pimspg=pimspg, apg=apg,
+                           ptspg=ptspg, gp=gp, gpg=gpg, g=g, a=a, pts=pts, pims=pims,
+                           attributes=attributes, num=num, name=name, data=data,
+                           players_pattern=players_pattern, img_f=img_f)

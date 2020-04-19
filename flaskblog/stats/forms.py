@@ -5,11 +5,10 @@ from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationE
 from flaskblog.models import User
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from flask import  Blueprint
+from flask import Blueprint
 
 
 stats = Blueprint('main', __name__)
-
 
 
 class PlayerForm(Form):
