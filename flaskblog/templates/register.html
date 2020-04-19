@@ -1,10 +1,22 @@
 {% extends "base.html" %}
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/reg.css')}}">
 {% endblock %}
 
-{% block content %}
+<div class="container">
+
+
+  {% block content %}
+
+
+    <div class="row">
+
+
+    <div class="col-2">
+
+    </div>
+    <div class="col-md-8">
     <div class="content-section">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
@@ -65,7 +77,7 @@
                 </div>
             </fieldset>
             <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+                {{ form.submit(class="btn btn-success") }}
             </div>
         </form>
     </div>
@@ -74,4 +86,8 @@
             Already Have An Account? <a class="ml-2" href="{{ url_for('users.login') }}">Sign In</a>
         </small>
     </div>
+  </div>
+</div>
+</div>
+
 {% endblock content %}

@@ -1,5 +1,5 @@
 import pandas as pd
-from flask import render_template, request, Blueprint,session,redirect,url_for,flash
+from flask import render_template, request, Blueprint, session, redirect, url_for, flash
 from flaskblog.main.forms import PlayerForm
 from flaskblog.models import Post
 
@@ -12,6 +12,7 @@ df.to_csv('flaskblog/data.csv',index=False)
 '''
 f = '../acha/flaskblog/data.csv'
 # /home/brendan/Desktop/acha/flaskblog/data.csv
+
 
 def get_player_attributes(playername):
 
@@ -31,9 +32,6 @@ def get_player_attributes(playername):
         return df.loc[df['Name'] == playername].to_dict('r')[0]
     except:
         return 0
-
-
-print(get_player_attributes('Tyler Billngsly'))
 
 
 def get_team(playername):
@@ -60,8 +58,6 @@ def get_team(playername):
     team_players = team_players.reset_index()
     # print(team)
     return team_players.to_json()
-#x=json.loads(get_team('Tyler Billingsly'))
-# print(x["Name"]['13'])
 
 
 def get_csv():
@@ -92,9 +88,6 @@ def get_player_list():
 
 def get_player_pattern():
     df = pd.read_csv(f)
-    #df = df.drop(df[(df['GP'] == 0)].index)
-    #df = df.drop(df[(df['PTS'] <= 1)].index)
-    #df = df.fillna('no name')
     option = []
 
     for i in range(len(df.Name)):
@@ -110,6 +103,7 @@ def set_img(img_file, name):
     df['img'].loc[df.Name == name] = img_file
     df.to_csv(f, index=False)
 
+
 def nav_search():
     player_form = PlayerForm(request.form)
     players_pattern = get_player_pattern()
@@ -119,7 +113,11 @@ def nav_search():
             flash('enter a valid name', 'danger')
             page = request.args.get('page', 1, type=int)
             posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-            return render_template('home.html', posts=posts,players_pattern=players_pattern)
+            return render_template('home.html', posts=posts, players_pattern=players_pattern)
         else:
             return redirect(url_for('stats.player', name=request.form["player"]))
-    else: pass
+    else:
+        flash('enter a valid name', 'danger')
+        page = request.args.get('page', 1, type=int)
+        posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
+        return render_template('home.html', posts=posts, players_pattern=players_pattern)

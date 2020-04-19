@@ -3,19 +3,31 @@
 {{ super() }}
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/home.css')}}">
 {% endblock %}
-{% block content %}
-    <div class="content-section">
+<div class="container">
+
+
+  {% block content %}
+
+
+    <div class="row">
+
+
+    <div class="col-2">
+
+    </div>
+    <div class="col-md-8">
+    <div class="a-content-section text-dark">
         <img class="rounded-circle account-img" src="{{ image_file }}">
         <div class="media-body">
           <h2 class="account-heading">{{ current_user.username }}</h2>
-          <p class="text-secondary">{{ current_user.email }}</p>
+          <p class="text-dark bg-light text-center">{{ current_user.email }}</p>
         </div>
       </div>
         <form class="update" method="POST" action="" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Account Info</legend>
-                <div class="form-group">
+                <legend class="border-bottom mb-4 text-light">Account Info</legend>
+                <div class="form-group text-light">
                     {{ form.username.label(class="form-control-label") }}
 
                     {% if form.username.errors %}
@@ -53,8 +65,10 @@
                 </div>
             </fieldset>
             <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+                {{ form.submit(class="btn btn-success") }}
             </div>
         </form>
     </div>
+  </div>
+</div>
 {% endblock content %}
