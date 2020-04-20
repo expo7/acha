@@ -86,3 +86,19 @@ a.article-title:hover {
   border-radius: 3px;
   margin-bottom: 20px;
 }
+.nav-link{
+  color: white;
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 14;
+  font-weight: bold;
+  padding-top: 25px;
+  padding-bottom:25px;
+}
+.nav-link:hover{
+
+  background-color: blue;
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 14;
+  font-weight: bold;
+  color: white;
+}

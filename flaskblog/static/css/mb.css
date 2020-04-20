@@ -1,17 +1,20 @@
 body{
 
-  background-image: url('/static/img/Black Background.jpg');
+  background-image: url('/static/img/abstract-1867838_1920.jpg');
   display: block;
   color: blue;
   background-size: cover;
   background-repeat: no-repeat;
 }
+/* div{
+  text-align: left;
+} */
 
 .navbar{
   margin-bottom: 15px;
 }
 .row{
-  text-align: center;
+  text-align: left;
 }
 .nav-link{
   color: white;
@@ -33,17 +36,24 @@ body{
 
 
 .article-img {
-  diplay:grid;
-  height: 65px;
-  width: 65px;
-  margin-top: 5px;
+
+  height: 20px;
+  width: 20px;
+
+}
+.article-img:hover{
+
+  height: 60px;
+  width: 60px;
+  border: 1px solid red;
+
 }
 
 
 .content-section {
-  background-color: grey;
-  color: black;
+  background-color: #EBEBEB;
   padding: 10px 20px;
+  display: block;
   /* border: 1px solid #dddddd; */
   border-radius: 3px;
   margin-bottom: 20px;
@@ -52,30 +62,44 @@ body{
 }
 
 .article-title {
-  color: #444444;
-  border-bottom: 1px solid;
-  border-width:thin;
-}
-
-a.article-title:hover {
-  color: #428bca;
+  color: black;
+  text-align: left;
+  IBMPlexSans,Areal,sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 21px;
   text-decoration: none;
 }
 
+a.article-title:hover {
+  IBMPlexSans,Areal,sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 21px;
+  text-decoration: underline;
+}
+
 .article-content {
-  white-space: pre-line;
+  font-family: Noto Sans,Arial,sans-serif;
+font-size: 14px;
+font-weight: 400;
+line-height: 21px;
+word-break: break-word;
+overflow: auto;
+padding-bottom: 1px;
+margin-bottom: -1px;
 }
 
 
 
 .article-metadata {
-  display: grid;
-  justify-content: center;
+  display: inline-inline-block;
+  text-align: left;
 }
 
 .article-metadata a:hover {
-  color: #333;
-  text-decoration: none;
+
+  text-decoration: underline;
 }
 
 .article-svg {
@@ -102,7 +126,7 @@ a.article-title:hover {
   white-space:normal;
 }
 p{
-  text-align: center;
+  text-align: left;
 }
 .form-group{
   text-align: left;
@@ -118,14 +142,18 @@ p{
 .form-group{
 
   color: white;
-  font-family: "Sintony",Arial,sans-serif;
-  font-size: 14;
-  font-weight: bold;
 }
-.btn{
-  color: white;
-  font-family: "Sintony",Arial,sans-serif;
-  font-size: 14;
-  font-weight: bold;
+.media-body {
+  text-align: left;
 
+}
+.post-name{
+  color: black;
+  display: inline;
+  text-align: left;
+  font-family: IBMPlexSans,Areal,sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  text-decoration: none;
 }

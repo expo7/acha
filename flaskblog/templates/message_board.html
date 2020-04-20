@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/mb.css')}}">
+{% endblock %}
+<div class="container ">
+  {% block content %}
+  {% for post in posts.items %}
+  <div class="row">
+
+
+  <div class=" col-2"></div>
+
+    <div class="col-8">
+
+          <article class="media content-section">
+
+            <div class="article-metadata mb-1">
+              <img class="rounded-circle article-img ml-2 mr-1" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+              <a class="mr-1 ml-1 post-name mb-1" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+            </div>
+            <!-- <div class="media-body"> -->
+
+              <a class="article-title ml-2" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</a>
+              <p class="article-content ml-2 text-dark">{{ post.content }}</p>
+            <!-- </div> -->
+          </article>
+          </div>
+            </div>
+      {% endfor %}
+      {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+        {% if page_num %}
+          {% if posts.page == page_num %}
+            <a class="btn btn-dark mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
+          {% else %}
+            <a class="btn btn-outline-dark mb-4" href="{{ url_for('main.message', page=page_num) }}">{{ page_num }}</a>
+          {% endif %}
+        {% else %}
+          ...
+        {% endif %}
+      {% endfor %}
+{% endblock %}
+</div>
+{% block scripts %}
+{{ super() }}
+<script>var players_pattern = {{players_pattern | tojson}}</script>
+{% endblock %}

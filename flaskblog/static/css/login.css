@@ -124,3 +124,15 @@ p{
   font-weight: bold;
   color: white;
 }
+legend{
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+label{
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}

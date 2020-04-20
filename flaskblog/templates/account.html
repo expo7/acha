@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/home.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/acc.css')}}">
 {% endblock %}
 <div class="container">
 
@@ -19,8 +19,10 @@
     <div class="a-content-section text-dark">
         <img class="rounded-circle account-img" src="{{ image_file }}">
         <div class="media-body">
-          <h2 class="account-heading">{{ current_user.username }}</h2>
-          <p class="text-dark bg-light text-center">{{ current_user.email }}</p>
+          <!-- <h2 class="account-heading">{{ current_user.username }}</h2> -->
+          <h3><span class="badge badge-secondary">{{ current_user.username }}</span></h3>
+          <!-- <p class="text-dark bg-light text-center">{{ current_user.email }}</p> -->
+          <span class="badge badge-pill badge-info text-dark">User: {{ current_user.email }}</span>
         </div>
       </div>
         <form class="update" method="POST" action="" enctype="multipart/form-data">

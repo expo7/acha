@@ -17,6 +17,8 @@ h2{
 }
 
 .jumbotron {
+  display: grid;
+  justify-content: center;
   background-image: url("/static/img/ice3.jpg");
   margin-top: 10px;
   background-position: center; /* Center the image */
@@ -55,5 +57,35 @@ h2 {
 
   background-color:#CECECE;
   opacity: .8;
+
+}
+.nav-link{
+  color: white;
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 14;
+  font-weight: bold;
+  padding-top: 25px;
+  padding-bottom:25px;
+}
+.nav-link:hover{
+
+  background-color: blue;
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 14;
+  font-weight: bold;
+  color: white;
+}
+.form-group{
+
+  color: white;
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 14;
+  font-weight: bold;
+}
+.btn{
+  color: white;
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 14;
+  font-weight: bold;
 
 }

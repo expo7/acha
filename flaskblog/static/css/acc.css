@@ -1,6 +1,6 @@
 body{
 
-  background-image: url('/static/img/ice-hockey-659809_1920.jpg');
+  background-image: url('/static/img/abstract-1867838_1920.jpg');
   display: block;
   color: blue;
   background-size: cover;
@@ -46,13 +46,6 @@ a.article-title:hover {
 
 .article-content {
   white-space: pre-line;
-}
-.btn{
-  color: white;
-  font-family: "Sintony",Arial,sans-serif;
-  font-size: 14;
-  font-weight: bold;
-
 }
 
 
@@ -123,4 +116,18 @@ p{
   font-size: 14;
   font-weight: bold;
   color: white;
+}
+.form-group{
+
+  color: white;
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 14;
+  font-weight: bold;
+}
+.btn{
+  color: white;
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 14;
+  font-weight: bold;
+
 }

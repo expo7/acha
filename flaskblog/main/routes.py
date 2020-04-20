@@ -1,7 +1,6 @@
-from flask import render_template, request, Blueprint, redirect, url_for, flash
+from flask import render_template, request, Blueprint
+from flaskblog.main.utils import (get_player_pattern, nav_search)
 from flaskblog.models import Post
-from flaskblog.main.utils import (get_player_pattern, get_player_attributes,
-                                  nav_search)
 main = Blueprint('main', __name__)
 
 
@@ -18,14 +17,14 @@ def home():
                            players_pattern=players_pattern)
 
 
-@main.route("/about")
-def about():
+@main.route("/message")
+def message():
     players_pattern = get_player_pattern()
-    print(players_pattern)
-
     if (request.method == 'POST'):
-        name = request.form["player"]
-        if (get_player_attributes(name) == 0):
-            flash('enter a valid name', 'danger')
-            return redirect(url_for('main.home'))
-    return render_template('about.html', title='About')
+        return nav_search()
+
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page,
+                                                                  per_page=5)
+    return render_template('message_board.html', posts=posts,
+                           players_pattern=players_pattern)

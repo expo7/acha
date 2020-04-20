@@ -124,3 +124,14 @@ p{
   font-weight: bold;
   color: white;
 }
+.form-control-label{
+  color: white;
+  font-family: "Sintony",Arial,sans-serif;
+  font-size: 14;
+  font-weight: bold;
+}
+.border-bottom{
+  color: white;
+  font-family: "Sintony",Arial,sans-serif;
+  font-weight: bold;
+}
