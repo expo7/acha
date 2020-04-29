@@ -1,6 +1,7 @@
 body{
 
-  background-image: url('/static/img/abstract-1867838_1920.jpg');
+  /* background-image: url('/static/img/abstract-1867838_1920.jpg'); */
+  background-color: #EBEBEB;
   display: block;
   color: blue;
   background-size: cover;
@@ -51,7 +52,8 @@ body{
 
 
 .content-section {
-  background-color: #EBEBEB;
+  /* background-color: #EBEBEB; */
+  background-color: white;
   padding: 10px 20px;
   display: block;
   /* border: 1px solid #dddddd; */
@@ -138,7 +140,7 @@ p{
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
-}
+}left
 .form-group{
 
   color: white;

@@ -91,7 +91,8 @@ p{
 }
 .a-content-section{
   /* background: #ffffff; */
-  background-image: url('/static/img/rink.jpg');
+  background-image: url('/static/img/rink(1300, 550).jpg');
+
   padding: 10px 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;

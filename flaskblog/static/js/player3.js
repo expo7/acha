@@ -38,8 +38,8 @@
                 var ppg=[]
                 var shg=[]
 
-                //console.log(team);
-               
+                console.log(team);
+
 
 
 
@@ -87,7 +87,7 @@
                 mean_line_pimspg=mean(mean_line_pimspg)
                 mean_line_PPG=mean(mean_line_PPG)
                 mean_line_shg=mean(mean_line_shg)
-                
+
 
                 mean_line_gp = []
                 mean_line_g = []
@@ -100,6 +100,8 @@
                 mean_line_pims=[]
                 mean_line_pimspg=[]
                 mean_line_shg=[]
+
+
 
 
                 var colors = []
@@ -131,7 +133,7 @@ function set_my_dataset(my_label,my_data,my_mean_line){
     set=[
 
         {
-                   
+
             label: 'average',
             data: my_mean_line,
             borderColor: 'black',
@@ -163,11 +165,11 @@ function set_my_options(my_label){
                     maintainAspectRatio: false,
                     title: {
                         display: true,
-                
+
                         fontSize: 16,
                         text: team['Team'][1],
                         fontColor: 'black'
-                    
+
                     },
                     scales: {
                         yAxes: [{
@@ -178,7 +180,7 @@ function set_my_options(my_label){
                             },
                             ticks: {
                                 fontColor: 'black'
-                
+
                             }
                         }],
                         xAxes: [{
@@ -196,6 +198,8 @@ function set_my_options(my_label){
                         min: 0
                     }
                 });
+
+
                 var mixedChart_gp = new Chart(ctx, {
                     type: 'bar',
                     data: {datasets:set_my_dataset("GP++++",gp,mean_line_gp),labels: names},
@@ -211,15 +215,15 @@ function set_my_options(my_label){
                 });
 
                 var ctx = document.getElementById('mixedChart_pts').getContext('2d'); //////
-                var mixedChart_pts = new Chart(ctx, {           
+                var mixedChart_pts = new Chart(ctx, {
 
                     type: 'bar',
                     data: {datasets:set_my_dataset("Points",PTS,mean_line_pts), labels: names,},
-                    options: set_my_options('Points') 
+                    options: set_my_options('Points')
                 });
 
                 var ctx = document.getElementById('mixedChart_a').getContext('2d'); //////
-                var mixedChart_a = new Chart(ctx, {           
+                var mixedChart_a = new Chart(ctx, {
 
                     type: 'bar',
                     data: {
@@ -229,7 +233,7 @@ function set_my_options(my_label){
                 });
 
                 var ctx = document.getElementById('mixedChart_pims').getContext('2d'); //////
-                var mixedChart_pims = new Chart(ctx, {           
+                var mixedChart_pims = new Chart(ctx, {
 
                     type: 'bar',
                     data: {
@@ -239,7 +243,7 @@ function set_my_options(my_label){
 
 
                 var ctx = document.getElementById('mixedChart_pointspg').getContext('2d'); //////
-                var mixedChart_pointspg = new Chart(ctx, {           
+                var mixedChart_pointspg = new Chart(ctx, {
 
                     type: 'bar',
                     data: {
@@ -248,7 +252,7 @@ function set_my_options(my_label){
                 });
 
                 var ctx = document.getElementById('mixedChart_apg').getContext('2d'); //////
-                var mixedChart_apg = new Chart(ctx, {           
+                var mixedChart_apg = new Chart(ctx, {
 
                     type: 'bar',
                     data: {
@@ -257,11 +261,11 @@ function set_my_options(my_label){
                     },
                     options: set_my_options('A/Game')
 
-                       
+
                 });
 
                 var ctx = document.getElementById('mixedChart_gpg').getContext('2d'); //////
-                var mixedChart_gpg = new Chart(ctx, {           
+                var mixedChart_gpg = new Chart(ctx, {
 
                     type: 'bar',
                     data: {
@@ -270,12 +274,12 @@ function set_my_options(my_label){
                     },
                     options: set_my_options('G/Game--')
 
-                      
+
                 });
 
 
                 var ctx = document.getElementById('mixedChart_ppg').getContext('2d'); //////
-                var mixedChart_ppg = new Chart(ctx, {           
+                var mixedChart_ppg = new Chart(ctx, {
 
                     type: 'bar',
                     data: {
@@ -284,12 +288,12 @@ function set_my_options(my_label){
                     },
                     options: set_my_options('PPG')
 
-                       
+
                 });
 
 
                 var ctx = document.getElementById('mixedChart_shg').getContext('2d'); //////
-                var mixedChart_shg = new Chart(ctx, {           
+                var mixedChart_shg = new Chart(ctx, {
 
                     type: 'bar',
                     data: {
@@ -298,12 +302,12 @@ function set_my_options(my_label){
                     },
                     options: set_my_options('SHG')
 
-                    
+
                 });
 
 
                 var ctx = document.getElementById('mixedChart_pimspg').getContext('2d'); //////
-                var mixedChart_pimsspg = new Chart(ctx, {           
+                var mixedChart_pimsspg = new Chart(ctx, {
 
                     type: 'bar',
                     data: {
@@ -312,6 +316,3 @@ function set_my_options(my_label){
                     },
                     options: set_my_options('PIMS/Game')
                 });
-
-
-               

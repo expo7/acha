@@ -1,3 +1,15 @@
+@font-face {
+  src:url('/static/fonts/norwester.ttf');
+  font-family:'nor';
+}
+@font-face {
+  src:url('/static/fonts/Sintony-Bold.ttf');
+  font-family:'Sintony';
+}
+@font-face {
+  src:url('/static/fonts/Sintony-Regular.ttf');
+  font-family:'Sintony_reg';
+}
 h2{
   color: black;
 
@@ -6,8 +18,12 @@ h2{
   text-align: center;
 
 }
-.img {
-  border-radius: 30%;
+.pic {
+  border: 2px solid black;
+  height: 125px;
+  width: 125px;
+  margin-top: 4px;
+
 }
 
 .center {
@@ -19,7 +35,7 @@ h2{
 .jumbotron {
   display: grid;
   justify-content: center;
-  background-image: url("/static/img/ice3.jpg");
+  background-image: url("/static/img/rink(1300, 550).jpg");
   margin-top: 10px;
   background-position: center; /* Center the image */
   background-color: black;
@@ -27,9 +43,16 @@ h2{
   background-size: 100%;
   /* Resize the background image to cover the entire container */
 }
+canvas{
+    background-color: white;
+
+}
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Sintony_reg';
+  font-weight: 400;
+  line-height: 14px;
+  font-size: 14px;
   background-image: url("/static/img/Black Background.jpg");
 }
 
@@ -40,7 +63,7 @@ h2 {
 .chart-container{
   height: 400px;
   width: 1000px;
-  background-color: aliceblue;
+  background-color: white;
 }
 .col{
   height: 400px;
@@ -48,7 +71,7 @@ h2 {
   opacity: .8;
   margin: 10px;
 }
-#myDiv11{
+.myDiv11{
   height: 400px;
   background-color: white;
   opacity: .8;
@@ -61,18 +84,19 @@ h2 {
 }
 .nav-link{
   color: white;
-  font-family: "Sintony",Arial,sans-serif;
-  font-size: 14;
-  font-weight: bold;
+  font-family: "Sintony";
+  font-size: 14px;
+  line-height: 14px
+  font-weight: 700;
   padding-top: 25px;
   padding-bottom:25px;
 }
 .nav-link:hover{
 
   background-color: blue;
-  font-family: "Sintony",Arial,sans-serif;
-  font-size: 14;
-  font-weight: bold;
+  font-family: "Sintony";
+  font-size: 14px;
+  font-weight: 700;
   color: white;
 }
 .form-group{
@@ -88,4 +112,33 @@ h2 {
   font-size: 14;
   font-weight: bold;
 
+}
+.pn{
+
+  font-family: "nor";
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 28px;
+}
+.badge{
+  color: black;
+}
+.player-info {
+  display: flex;
+  text-align: left;
+}
+.logo-img {
+
+  height: 40px;
+  width: 40px;
+
+}
+.team{
+  font-family: "nor";
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 12px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

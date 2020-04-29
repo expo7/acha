@@ -123,13 +123,13 @@ var auto_size = true;
 var width= 500;
 var height= 400;
 var font = {
-    family: 'Times New Roman, Times, serif',
+    family: 'Sintony',
     size: 18,
     color: 'black'
 }
 
 var font1 = {
-    family: "Times New Roman, Times, serif",
+    family: "Sintony",
     size: 12,
     color: "black"
 }
@@ -138,6 +138,7 @@ var font1 = {
 function fill_layout(title, x_axis) {
     my_layout = {
         barmode: 'overlay',
+        showlegend:false,
         paper_bgcolor: paper_bgcolor,
         plot_bgcolor: plot_bgcolor,
         autosize: auto_size,
@@ -148,23 +149,34 @@ function fill_layout(title, x_axis) {
             font: font
         },
         xaxis: {
+          tickfont:{
+            family:"Sintony"
+          },
+
 
             title: {
                 text: x_axis,
-                font: font1
+                font: font1,
+
             },
             nticks: xticks
         },
         yaxis: {
+          tickfont:{
+            family:"Sintony"
+          },
             title: {
                 text: y_title,
-                font: font1
+                font: font1,
+                fontColor:'blue'
+
             },
-            nticks: yticks
+
         }
     };
     return my_layout
 }
+
 
 var acha = {
     x: g,
@@ -177,27 +189,50 @@ var acha = {
         color: chart_color1
     }
 };
-
 var playername = {
 
-    x: stat_list_match[0],
-    type: chart_type,
+    x: [tstats[0],tstats[0]],
+    y:[0,400],
+    mode:'lines',
     name: name,
     opacity: op2,
-    marker: {
-        color: chart_color2
+    line: {
+        color: chart_color2,
+        dash:'dot'
     }
 };
 var average = {
-
-    x: mean_list_match[0],
+    y:[0,400],
+    x: [mean_vals[0],mean_vals[0]],
     name: ledgent2,
     opacity: op3,
-    type: chart_type,
-    marker: {
-        color: chart_color3
+    mode:'lines',
+    line: {
+        color: chart_color3,
+        dash:'dot'
     }
 };
+
+// var playername = {
+//
+//     x: stat_list_match[0],
+//     type: chart_type,
+//     name: name,
+//     opacity: op2,
+//     marker: {
+//         color: chart_color2
+//     }
+// };
+// var average = {
+//
+//     x: mean_list_match[0],
+//     name: ledgent2,
+//     opacity: op3,
+//     type: chart_type,
+//     marker: {
+//         color: chart_color3
+//     }
+// };
 
 
 var data = [acha, average, playername];
@@ -216,27 +251,50 @@ var acha = {
         color: chart_color1
     }
 };
-
 var playername = {
 
-    x: stat_list_match[1],
-    type: chart_type,
+    x: [tstats[1],tstats[1]],
+    y:[0,400],
+    mode:'lines',
     name: name,
     opacity: op2,
-    marker: {
-        color: chart_color2
+    line: {
+        color: chart_color2,
+        dash:'dot'
     }
 };
 var average = {
-
-    x: mean_list_match[1],
+    y:[0,400],
+    x: [mean_vals[1],mean_vals[1]],
     name: ledgent2,
     opacity: op3,
-    type: chart_type,
-    marker: {
-        color: chart_color3
+    mode:'lines',
+    line: {
+        color: chart_color3,
+        dash:'dot'
     }
 };
+
+// var playername = {
+//
+//     x: stat_list_match[1],
+//     type: chart_type,
+//     name: name,
+//     opacity: op2,
+//     marker: {
+//         color: chart_color2
+//     }
+// };
+// var average = {
+//
+//     x: mean_list_match[1],
+//     name: ledgent2,
+//     opacity: op3,
+//     type: chart_type,
+//     marker: {
+//         color: chart_color3
+//     }
+// };
 
 
 var data = [acha, average, playername];
@@ -254,27 +312,31 @@ var acha = {
         color: chart_color1
     }
 };
-
 var playername = {
 
-    x: stat_list_match[2],
-    type: chart_type,
+    x: [tstats[2],tstats[2]],
+    y:[0,300],
+    mode:'lines',
     name: name,
     opacity: op2,
-    marker: {
-        color: chart_color2
+    line: {
+        color: chart_color2,
+        dash:'dot'
     }
 };
 var average = {
-
-    x: mean_list_match[2],
+    y:[0,300],
+    x: [mean_vals[2],mean_vals[2]],
     name: ledgent2,
     opacity: op3,
-    type: chart_type,
-    marker: {
-        color: chart_color3
+    mode:'lines',
+    line: {
+        color: chart_color3,
+        dash:'dot'
     }
 };
+
+
 
 
 var data = [acha, average, playername];
@@ -303,7 +365,7 @@ var acha = {
 var playername = {
 
     x: [tstats[3],tstats[3]],
-    y:[0,1000],
+    y:[0,800],
     mode:'lines',
     name: name,
     opacity: op2,
@@ -313,7 +375,7 @@ var playername = {
     }
 };
 var average = {
-    y:[0,1000],
+    y:[0,800],
     x: [mean_vals[3],mean_vals[3]],
     name: ledgent2,
     opacity: op3,
@@ -340,31 +402,53 @@ var acha = {
         color: chart_color1
     }
 };
-
 var playername = {
 
-    x: stat_list_match[1],
-    type: chart_type,
+    x: [tstats[1],tstats[1]],
+    y:[0,400],
+    mode:'lines',
     name: name,
     opacity: op2,
-    marker: {
-        color: chart_color2
+    line: {
+        color: chart_color2,
+        dash:'dot'
     }
 };
 var average = {
-
-    x: mean_list_match[1],
+    y:[0,400],
+    x: [mean_vals[1],mean_vals[1]],
     name: ledgent2,
     opacity: op3,
-    type: chart_type,
-    marker: {
-        color: chart_color3
+    mode:'lines',
+    line: {
+        color: chart_color3,
+        dash:'dot'
     }
 };
+// var playername = {
+//
+//     x: stat_list_match[1],
+//     type: chart_type,
+//     name: name,
+//     opacity: op2,
+//     marker: {
+//         color: chart_color2
+//     }
+// };
+// var average = {
+//
+//     x: mean_list_match[1],
+//     name: ledgent2,
+//     opacity: op3,
+//     type: chart_type,
+//     marker: {
+//         color: chart_color3
+//     }
+// };
 
 
 var data = [acha, average, playername];
-Plotly.newPlot('myDiv2', data, fill_layout('ACHA-Assists', 'Assists'), {
+Plotly.newPlot('myDiv2', data, fill_layout('ACHA Assists', 'Assists'), {
     staticPlot: chart_static
 });
 
@@ -381,25 +465,27 @@ var acha = {
 
 var playername = {
 
-    x: stat_list_match[4],
-    type: chart_type,
+    x: [tstats[4],tstats[4]],
+    y:[0,200],
+    mode:'lines',
     name: name,
     opacity: op2,
-    marker: {
-        color: chart_color2
+    line: {
+        color: chart_color2,
+        dash:'dot'
     }
 };
 var average = {
-
-    x: mean_list_match[4],
+    y:[0,200],
+    x: [mean_vals[4],mean_vals[4]],
     name: ledgent2,
     opacity: op3,
-    type: chart_type,
-    marker: {
-        color: chart_color3
+    mode:'lines',
+    line: {
+        color: chart_color3,
+        dash:'dot'
     }
 };
-
 
 var data = [acha, average, playername];
 Plotly.newPlot('myDiv4', data, fill_layout('ACHA GP', 'GP'), {
@@ -424,41 +510,31 @@ var acha = {
         color: chart_color1
     }
 };
-
 var playername = {
 
-    x: stat_list_match[5],
-
-    xbins: {
-        start: -.5,
-        size: 1,
-        end: 8.5,
-        autobinx : false,
-    },
-    type: chart_type,
+    x: [tstats[5],tstats[5]],
+    y:[0,2000],
+    mode:'lines',
     name: name,
     opacity: op2,
-    marker: {
-        color: chart_color2
+    line: {
+        color: chart_color2,
+        dash:'dot'
     }
 };
 var average = {
-
-    x: mean_list_match[5],
-    autobinx : false,
-    xbins: {
-        start: -.5,
-        size: 1,
-        end: 8.5,
-        autobinx : false,
-    },
+    y:[0,2000],
+    x: [mean_vals[5],mean_vals[5]],
     name: ledgent2,
     opacity: op3,
-    type: chart_type,
-    marker: {
-        color: chart_color3
+    mode:'lines',
+    line: {
+        color: chart_color3,
+        dash:'dot'
     }
 };
+
+
 
 
 var data = [acha, average, playername];
@@ -483,41 +559,64 @@ var acha = {
         color: chart_color1
     }
 };
-
 var playername = {
 
-    x: stat_list_match[6],
-
-    xbins: {
-        start: -.5,
-        size: 1,
-        end: 20.5,
-        autobinx : false,
-    },
-    type: chart_type,
+    x: [tstats[6],tstats[6]],
+    y:[0,1500],
+    mode:'lines',
     name: name,
     opacity: op2,
-    marker: {
-        color: chart_color2
+    line: {
+        color: chart_color2,
+        dash:'dot'
     }
 };
 var average = {
-
-    x: mean_list_match[6],
-    autobinx : false,
-    xbins: {
-        start: -.5,
-        size: 1,
-        end: 20.5,
-        autobinx : false,
-    },
+    y:[0,1500],
+    x: [mean_vals[6],mean_vals[6]],
     name: ledgent2,
     opacity: op3,
-    type: chart_type,
-    marker: {
-        color: chart_color3
+    mode:'lines',
+    line: {
+        color: chart_color3,
+        dash:'dot'
     }
 };
+
+// var playername = {
+//
+//     x: stat_list_match[6],
+//
+//     xbins: {
+//         start: -.5,
+//         size: 1,
+//         end: 20.5,
+//         autobinx : false,
+//     },
+//     type: chart_type,
+//     name: name,
+//     opacity: op2,
+//     marker: {
+//         color: chart_color2
+//     }
+// };
+// var average = {
+//
+//     x: mean_list_match[6],
+//     autobinx : false,
+//     xbins: {
+//         start: -.5,
+//         size: 1,
+//         end: 20.5,
+//         autobinx : false,
+//     },
+//     name: ledgent2,
+//     opacity: op3,
+//     type: chart_type,
+//     marker: {
+//         color: chart_color3
+//     }
+// };
 
 
 var data = [acha, average, playername];
@@ -540,7 +639,7 @@ var acha = {
 var playername = {
 
     x: [tstats[7],tstats[7]],
-    y:[0,400],
+    y:[0,300],
     mode:'lines',
     name: name,
     opacity: op2,
@@ -550,7 +649,7 @@ var playername = {
     }
 };
 var average = {
-    y:[0,400],
+    y:[0,300],
     x: [mean_vals[7],mean_vals[7]],
     name: ledgent2,
     opacity: op3,
@@ -582,7 +681,7 @@ var acha = {
 var playername = {
 
     x: [tstats[8],tstats[8]],
-    y:[0,400],
+    y:[0,300],
     mode:'lines',
     name: name,
     opacity: op2,
@@ -592,7 +691,7 @@ var playername = {
     }
 };
 var average = {
-    y:[0,400],
+    y:[0,300],
     x: [mean_vals[8],mean_vals[8]],
     name: ledgent2,
     opacity: op3,
@@ -624,7 +723,7 @@ var acha = {
 var playername = {
 
     x: [tstats[9],tstats[9]],
-    y:[0,250],
+    y:[0,200],
     mode:'lines',
     name: name,
     opacity: op2,
@@ -634,7 +733,7 @@ var playername = {
     }
 };
 var average = {
-    y:[0,250],
+    y:[0,200],
     x: [mean_vals[9],mean_vals[9]],
     name: ledgent2,
     opacity: op3,

@@ -9,10 +9,20 @@
 {% block content %}
   <div class="container-fluid" id='charts'>
 <div class="jumbotron">
-    <img class="rounded-circle center" src={{ img_f }}>
-<h3><span class="badge badge-secondary mt-2">{{ name }}|#{{ num |safe}}</span></h3>
+    <img class="rounded-circle center pic" src={{ img_f }}>
+    <span class="badge badge-light mt-2 pn">
+<div class="player-info">
+
+  <img class="rounded-circle logo-img mr-2 mt-2", src={{ team_logo |safe }} alt="">
+<h3><span class="badge badge-light mt-2 pn">{{ name }}</span></h3>
+<img class="rounded-circle logo-img ml-2 mt-2", src={{ team_logo |safe }} alt="">
+</div>
+<h3 class='team'>{{ Team }} | #{{ num |safe}}</h3>
+</span>
     <!-- <h2 class="bg-light">{{ name }}|#{{ num |safe}}</h2> -->
 </div>
+
+
 <table class="table table-dark">
     <thead>
       <tr>
@@ -153,7 +163,7 @@
 <script>var attributes = {{attributes | safe}}</script>
 <script>var name = {{name | tojson}}</script>
 <script>var data = {{data | tojson}}</script>
-<script src="{{ url_for('static', filename='js/player3.js') }}"></script>
+<script src="{{ url_for('static', filename='js/player4.js') }}"></script>
 <script src="{{ url_for('static', filename='js/hist2.js') }}"></script>
 
 {% endblock %}
