@@ -36,7 +36,7 @@ numpy==1.18.2
 oauthlib==2.1.0
 pandas==1.0.3
 pbr==5.4.5
-Pillow==7.1.1
+Pillow==8.1.1
 pycparser==2.20
 pycrypto==2.6.1
 SecretStorage==2.3.1
